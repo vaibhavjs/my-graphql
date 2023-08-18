@@ -1,13 +1,13 @@
-const { gql } = require('apollo-server');
+import { gql } from 'apollo-server';
 
-const typeDefs = gql`
+export const typeDefs = gql`
   type Player {
     id: ID!
     name: String!
     age: Int!
     club: String!
     country: String!
-    position: String! 
+    position: Position! 
   }
 
   type Query {
@@ -17,16 +17,16 @@ const typeDefs = gql`
     youngsters: [Player!]!
   }
 
-  input addPlayerInput {
+  input AddPlayerInput {
     name: String!
     age: Int!
     club: String!
     country: String!
-    position: String!
+    position: Position!
   }
 
   type Mutation {
-    addPlayer(input: addPlayerInput!): Player!
+    addPlayer(input: AddPlayerInput!): Player!
     deletePlayer(id: ID!): [Player!]!
   }
 
@@ -37,5 +37,3 @@ const typeDefs = gql`
     Goalkeeper
   }
 `;
-
-module.exports = { typeDefs };

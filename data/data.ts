@@ -1,4 +1,4 @@
-const PlayersList = [
+export const PlayersList = [
   {
     id: 1,
     name: "Lionel Messi",
@@ -64,5 +64,3 @@ const PlayersList = [
     position: "Midfielder",
   },
 ];
-
-module.exports = { PlayersList };
